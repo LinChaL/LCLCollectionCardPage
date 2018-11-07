@@ -27,6 +27,7 @@ class LCLCardPageCollectionCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         let image = UIImage(named: imageString)
         imageView.image = image
         imageView.frame = CGRect(x: 0, y: 0, width: 256, height: 256)

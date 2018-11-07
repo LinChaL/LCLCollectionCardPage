@@ -17,6 +17,8 @@
 		59F2499F2192D07A00E0F54E /* LCLCardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F2499E2192D07A00E0F54E /* LCLCardPageViewController.swift */; };
 		59F249A12193006300E0F54E /* TransformCardFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F249A02193006300E0F54E /* TransformCardFlowLayout.swift */; };
 		59F249A32193028300E0F54E /* LCLCardPageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F249A22193028300E0F54E /* LCLCardPageCollectionCell.swift */; };
+		59F249A521931ADC00E0F54E /* ShowMoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F249A421931ADC00E0F54E /* ShowMoreButtonView.swift */; };
+		59F249A7219325E100E0F54E /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F249A6219325E100E0F54E /* NewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		59F2499E2192D07A00E0F54E /* LCLCardPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCLCardPageViewController.swift; sourceTree = "<group>"; };
 		59F249A02193006300E0F54E /* TransformCardFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformCardFlowLayout.swift; sourceTree = "<group>"; };
 		59F249A22193028300E0F54E /* LCLCardPageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCLCardPageCollectionCell.swift; sourceTree = "<group>"; };
+		59F249A421931ADC00E0F54E /* ShowMoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreButtonView.swift; sourceTree = "<group>"; };
+		59F249A6219325E100E0F54E /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				59F2499E2192D07A00E0F54E /* LCLCardPageViewController.swift */,
 				59F249A02193006300E0F54E /* TransformCardFlowLayout.swift */,
 				59F249A22193028300E0F54E /* LCLCardPageCollectionCell.swift */,
+				59F249A421931ADC00E0F54E /* ShowMoreButtonView.swift */,
+				59F249A6219325E100E0F54E /* NewViewController.swift */,
 			);
 			path = LCLCollctionCardPage;
 			sourceTree = "<group>";
@@ -267,6 +273,8 @@
 			files = (
 				59F249A12193006300E0F54E /* TransformCardFlowLayout.swift in Sources */,
 				59F249A32193028300E0F54E /* LCLCardPageCollectionCell.swift in Sources */,
+				59F249A7219325E100E0F54E /* NewViewController.swift in Sources */,
+				59F249A521931ADC00E0F54E /* ShowMoreButtonView.swift in Sources */,
 				59F2499F2192D07A00E0F54E /* LCLCardPageViewController.swift in Sources */,
 				59F249732192BAC800E0F54E /* ViewController.swift in Sources */,
 				59F249712192BAC800E0F54E /* AppDelegate.swift in Sources */,

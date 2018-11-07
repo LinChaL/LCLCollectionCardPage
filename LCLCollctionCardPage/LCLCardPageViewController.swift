@@ -14,6 +14,15 @@ public let ScreenHeight = UIScreen.main.bounds.size.height
 public let ScreenScale  = UIScreen.main.scale
 
 class LCLCardPageViewController: UIViewController {
+    private let itemSize = CGSize(width: 256, height: 256)
+    private let itemNum: Int = 5
+    
+    private var isJumpable: Bool = false
+    
+    private lazy var showMoreView: ShowMoreButtonView = {
+        let view = ShowMoreButtonView()
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +34,7 @@ class LCLCardPageViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 70)
         layout.minimumInteritemSpacing = 0.00001
         layout.minimumLineSpacing = 0.00001
-        layout.itemSize = CGSize(width: 256, height: 256)
+        layout.itemSize = itemSize
         
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: ScreenHeight / 2 - 128, width: ScreenWidth, height: 256), collectionViewLayout: layout)
         collectionView.register(LCLCardPageCollectionCell.self, forCellWithReuseIdentifier: "cell")
@@ -35,6 +44,31 @@ class LCLCardPageViewController: UIViewController {
         collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         
         view.addSubview(collectionView)
+        
+        collectionView.addSubview(showMoreView)
+        showMoreView.frame = CGRect(x: CGFloat(itemNum) * itemSize.width + layout.sectionInset.left, y: 0, width: 200, height: itemSize.height)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x >= round(scrollView.contentSize.width + 20) - ScreenWidth {
+            showMoreView.updateLabelText("释放查看更多")
+            if !isJumpable {
+                isJumpable = true
+                showMoreView.updateIcon()
+            }
+        } else {
+            showMoreView.updateLabelText("左滑查看更多")
+            if isJumpable {
+                isJumpable = false
+                showMoreView.updateIcon()
+            }
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if isJumpable {
+            navigationController?.pushViewController(NewViewController(), animated: true)
+        }
     }
 }
 
@@ -44,7 +78,7 @@ extension LCLCardPageViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return itemNum
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,6 +92,6 @@ extension LCLCardPageViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 256, height: 256)
+        return itemSize
     }
 }
