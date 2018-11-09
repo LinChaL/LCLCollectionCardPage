@@ -4,7 +4,7 @@
 - 有弹簧效果，总有一张卡片停在屏幕左边20pt处
 - 滑动到最后一页，再继续滑动，会跳转到新页面
 
-### 美图美妆线上效果
+### 线上效果
 
 ![image](https://github.com/LinChaL/LCLCollectionCardPage/blob/master/QQ20181107-234238-HD.gif?raw=true)
 
