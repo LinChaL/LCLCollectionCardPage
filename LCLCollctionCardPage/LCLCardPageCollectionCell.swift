@@ -12,7 +12,12 @@ import UIKit
 class LCLCardPageCollectionCell: UICollectionViewCell {
     
     private var imageView = UIImageView()
-    var imageString: String = ""
+    var imageString: String = "" {
+        didSet {
+            let image = UIImage(named: imageString)
+            imageView.image = image
+        }
+    }
     
     override init(frame: CGRect) {
         
@@ -28,8 +33,6 @@ class LCLCardPageCollectionCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let image = UIImage(named: imageString)
-        imageView.image = image
         imageView.frame = CGRect(x: 0, y: 0, width: 256, height: 256)
         imageView.center = contentView.center
     }
